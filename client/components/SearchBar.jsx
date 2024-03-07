@@ -5,8 +5,9 @@ const SearchBar = ({ changeImg, image }) => {
   const [url, setUrl] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); //prevent refresh
     changeImg(url);
+    setUrl(''); //clear form after submit
   };
 
   const handleChange = (e) => {
