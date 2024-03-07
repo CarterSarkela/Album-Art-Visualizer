@@ -1,3 +1,75 @@
-body{
-  background: orange;
+@import '_colorVariables';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body {
+  display: flex;
+  flex-direction: column;
+  background: $color1;
+  height: 100vh;
+  width: 100vw;
+  max-height: 100%;
+  max-width: 100%;
+  #app {
+    // border: solid 1px black;
+    font-family: 'Roboto';
+    height: 100vh;
+    width: 100vw;
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #mainHeader {
+      text-align: center;
+      width: 30vw;
+      padding: 10px;
+      color: rgb(255, 255, 255);
+      border: solid 3px $color4;
+      border-radius: 5px;
+      background-color: rgb(0, 0, 0);
+    }
+    #searchContainer {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      background-color: $color2;
+      border: solid 3px $color4;
+      border-radius: 5px;
+      width: 80vw;
+      height: 10vw;
+      #searchForm {
+        justify-content: center;
+        justify-self: flex-end;
+        width: 100%;
+        #searchBar {
+          text-align: center;
+          width: 80%;
+        }
+        #submit {
+          width: 25%;
+          color: $color4;
+        }
+      }
+    }
+    #albumArt {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 5vh;
+      width: 30vw;
+      height: 30vw;
+      border: solid 1px black;
+      #albumImg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    #createdBy {
+      margin-top: auto;
+      margin-bottom: 5vh;
+    }
+  } //app
 }
