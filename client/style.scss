@@ -60,17 +60,33 @@ body {
       }
       margin: auto;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-direction: row;
+      justify-content: space-around;
       align-items: center;
       text-align: center;
       margin-top: 5vh;
-      width: 30vw;
-      height: 30vw;
+      width: 50vw;
+      height: 20vw;
       // border: solid 1px black;
+      #leftDiv{
+        background-color: $color2;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 50%;
+        // transform: skew(-20deg);
+        left: -10%;
+      }
       #albumImg {
-        width: 100%;
-        height: 100%;
+        max-width: 20vw;
+        max-height: 20vw;
+      }
+      #rightDiv{
+        background-color: $color3;
+        right: -10%;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 50%;
+        // transform: skew(20deg);
       }
     }
     #createdBy {

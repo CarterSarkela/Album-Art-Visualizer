@@ -32,11 +32,11 @@ const SearchContainer = () => {
             el.style.setProperty('border-color', `rgb(${colors[2]})`)
           );
         document.querySelectorAll('h1').forEach((el) => {
-          el.style.setProperty('border-color', `rgb(${colors[3]})`);
+          el.style.setProperty('border-color', `rgb(${colors[4]})`);
         });
 
-        // document.body.style.setProperty('background-color', `rgb(${colors[3]})`)
-        // document.body.style.setProperty('background-color', `rgb(${colors[4]})`)
+        document.querySelector('#leftDiv').style.setProperty('background-color', `rgb(${colors[3]})`)
+        document.querySelector('#rightDiv').style.setProperty('background-color', `rgb(${colors[3]})`)
       } catch (err) {
         console.error('Error: ', err);
       }
