@@ -17,26 +17,50 @@ const SearchContainer = () => {
     img.src = url;
     img.onload = async () => {
       try {
+        //get colors array
         const colors = await colorThief.getPalette(img, 5);
-        console.log('colors!!!!: ', colors);
+        // console.log('colors!!!!: ', colors);
+
+        //set elements selected via DOM manipulation and update the styles property
         document.body.style.setProperty(
           'background-color',
           `rgb(${colors[0]})`
         );
-        document
-          .querySelector('#searchContainer')
-          .style.setProperty('background-color', `rgb(${colors[1]})`);
-        document
-          .querySelectorAll('div')
-          .forEach((el) =>
-            el.style.setProperty('border-color', `rgb(${colors[2]})`)
-          );
-        document.querySelectorAll('h1').forEach((el) => {
-          el.style.setProperty('border-color', `rgb(${colors[4]})`);
-        });
+        if (colors[1]) {
+          document
+            .querySelector('#searchContainer')
+            .style.setProperty('background-color', `rgb(${colors[1]})`);
+        } else{
+          document
+            .querySelector('#searchContainer')
+            .style.setProperty('background-color', `rgb(${colors[0]})`);
+        }
+        if (colors[2]) {
+          document
+            .querySelector('#searchContainer')
+            .style.setProperty('border-color', `rgb(${colors[2]})`)
+        }else{
+          document
+            .querySelector('#searchContainer')
+            .style.setProperty('border-color', `rgb(${colors[0]})`)
+        }
+        if (colors[4]) {
+          document.querySelectorAll('h1').forEach((el) => {
+            el.style.setProperty('border-color', `rgb(${colors[4]})`);
+          });
+        } else {
+          document.querySelectorAll('h1').forEach((el) => {
+            el.style.setProperty('border-color', `rgb(${colors[1]})`);
+          });
+        }
 
-        document.querySelector('#leftDiv').style.setProperty('background-color', `rgb(${colors[3]})`)
-        document.querySelector('#rightDiv').style.setProperty('background-color', `rgb(${colors[3]})`)
+        if (colors[3]) {
+          document.querySelector('#leftDiv').style.setProperty('background-color', `rgb(${colors[3]})`)
+          document.querySelector('#rightDiv').style.setProperty('background-color', `rgb(${colors[3]})`)
+        } else{
+          document.querySelector('#leftDiv').style.setProperty('background-color', `rgb(${colors[1]})`)
+          document.querySelector('#rightDiv').style.setProperty('background-color', `rgb(${colors[1]})`)
+        }
       } catch (err) {
         console.error('Error: ', err);
       }

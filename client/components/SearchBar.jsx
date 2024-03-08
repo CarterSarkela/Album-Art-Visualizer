@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import AlbumArt from './AlbumArt.jsx';
+const albumArt = require('album-art');
 
 const SearchBar = ({ changeImg, image }) => {
-  const [url, setUrl] = useState('');
+  const [album, setAlbum] = useState('');
 
-  const handleSubmit = (e) => {
+
+
+  const handleSubmit = async (e) => {
+    const splitQuery = album.split("/")
     e.preventDefault(); //prevent refresh
+    const url = await albumArt(splitQuery[0], {album: splitQuery[1]});
     changeImg(url);
-    setUrl(''); //clear form after submit
+    // changeImg(album);//original line
+    setAlbum(''); //clear form after submit
   };
 
   const handleChange = (e) => {
-    setUrl(e.target.value);
+    setAlbum(e.target.value);
   };
 
   return (
@@ -19,10 +24,10 @@ const SearchBar = ({ changeImg, image }) => {
       <form onSubmit={handleSubmit}>
         <input
           type='text'
-          value={url}
+          value={album}
           onChange={handleChange}
           id='searchBar'
-          placeholder="Enter any album: i.e. '2014 Forest Hills Drive'"
+          placeholder="Enter any Artist/album: i.e. ' J Cole 2014 Forest Hills Drive'"
         ></input>
         <input type='submit' id='submit' value='Search' />
       </form>
