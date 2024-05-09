@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import SearchContainer from './searchContainer.jsx';
-import AlbumArt from './AlbumArt.jsx';
 import '../style.scss';
 
 const App = () => {

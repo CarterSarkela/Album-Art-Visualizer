@@ -1,16 +1,9 @@
 @import '_colorVariables';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 body {
-  display: flex;
-  flex-direction: column;
   background: $color1;
-  height: 100vh;
-  width: 100vw;
-  max-height: 100%;
-  max-width: 100%;
-  // background-image: url('https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png');
+  margin: 0;
   #app {
-    // border: solid 1px black;
     font-family: 'Roboto';
     height: 100vh;
     width: 100vw;
@@ -54,10 +47,8 @@ body {
         }
       }
     }
-    #albumArt {
-      :hover {
-        transform: scale(1.1);
-      }
+    #albumArtContainer {
+      border: 10, solid, black;
       margin: auto;
       display: flex;
       flex-direction: row;
@@ -67,7 +58,7 @@ body {
       margin-top: 5vh;
       width: 50vw;
       height: 20vw;
-      #leftDiv{
+      #leftDiv {
         background-color: $color2;
         width: 10vw;
         height: 10vw;
@@ -76,16 +67,18 @@ body {
         left: -10%;
       }
       #albumImg {
-        max-width: 20vw;
-        max-height: 20vw;
+        :hover {
+          transform: scale(1.1);
+        }
+        max-width: 30vw;
+        max-height: 30vw;
       }
-      #rightDiv{
+      #rightDiv {
         background-color: $color3;
         right: -10%;
         width: 10vw;
         height: 10vw;
         border-radius: 50%;
-        // transform: skew(20deg);
       }
     }
     #createdBy {
@@ -96,4 +89,4 @@ body {
       border-radius: 5px;
     }
   } //app
-}
+}//body

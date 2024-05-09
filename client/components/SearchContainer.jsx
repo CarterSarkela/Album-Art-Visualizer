@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SearchBar from './SearchBar.jsx';
-import AlbumArt from './AlbumArt.jsx';
+import AlbumArtContainer from './AlbumArtContainer.jsx';
 import '../style.scss';
 import ColorThief from 'colorthief/dist/color-thief.mjs';
 
@@ -30,7 +30,7 @@ const SearchContainer = () => {
           document
             .querySelector('#searchContainer')
             .style.setProperty('background-color', `rgb(${colors[1]})`);
-        } else{
+        } else {
           document
             .querySelector('#searchContainer')
             .style.setProperty('background-color', `rgb(${colors[0]})`);
@@ -38,11 +38,11 @@ const SearchContainer = () => {
         if (colors[2]) {
           document
             .querySelector('#searchContainer')
-            .style.setProperty('border-color', `rgb(${colors[2]})`)
-        }else{
+            .style.setProperty('border-color', `rgb(${colors[2]})`);
+        } else {
           document
             .querySelector('#searchContainer')
-            .style.setProperty('border-color', `rgb(${colors[0]})`)
+            .style.setProperty('border-color', `rgb(${colors[0]})`);
         }
         if (colors[4]) {
           document.querySelectorAll('h1').forEach((el) => {
@@ -55,11 +55,19 @@ const SearchContainer = () => {
         }
 
         if (colors[3]) {
-          document.querySelector('#leftDiv').style.setProperty('background-color', `rgb(${colors[3]})`)
-          document.querySelector('#rightDiv').style.setProperty('background-color', `rgb(${colors[3]})`)
-        } else{
-          document.querySelector('#leftDiv').style.setProperty('background-color', `rgb(${colors[1]})`)
-          document.querySelector('#rightDiv').style.setProperty('background-color', `rgb(${colors[1]})`)
+          document
+            .querySelector('#leftDiv')
+            .style.setProperty('background-color', `rgb(${colors[3]})`);
+          document
+            .querySelector('#rightDiv')
+            .style.setProperty('background-color', `rgb(${colors[3]})`);
+        } else {
+          document
+            .querySelector('#leftDiv')
+            .style.setProperty('background-color', `rgb(${colors[1]})`);
+          document
+            .querySelector('#rightDiv')
+            .style.setProperty('background-color', `rgb(${colors[1]})`);
         }
       } catch (err) {
         console.error('Error: ', err);
@@ -72,7 +80,7 @@ const SearchContainer = () => {
       <div id='searchContainer'>
         <SearchBar changeImg={changeImg} />
       </div>
-      <AlbumArt imageLink={imageLink} />
+      <AlbumArtContainer imageLink={imageLink} />
     </div>
   );
 };
