@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 import SearchContainer from './searchContainer.jsx';
 import '../style.scss';

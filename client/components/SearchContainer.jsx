@@ -19,7 +19,6 @@ const SearchContainer = () => {
       try {
         //get colors array
         const colors = await colorThief.getPalette(img, 5);
-        // console.log('colors!!!!: ', colors);
 
         //set elements selected via DOM manipulation and update the styles property
         document.body.style.setProperty(
