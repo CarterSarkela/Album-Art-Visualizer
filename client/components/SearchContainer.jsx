@@ -3,7 +3,6 @@ import SearchBar from './SearchBar.jsx';
 import AlbumArtContainer from './AlbumArtContainer.jsx';
 import '../style.scss';
 import ColorThief from 'colorthief/dist/color-thief.mjs';
-import ColorPalette from './ColorPalette.jsx';
 
 const SearchContainer = () => {
   const [imageLink, setImage] = useState(

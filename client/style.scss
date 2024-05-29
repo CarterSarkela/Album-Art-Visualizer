@@ -85,5 +85,19 @@ body {
       border: solid 2px black;
       border-radius: 5px;
     }
+    #colorPalette{
+      margin-top: 2vh;
+      border: 5px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .colorCircle{
+        background-color: $color3;
+        min-width: 10vw;
+        min-height: 10vw;
+        border-radius: 50%;
+        margin-left: 5vw;
+      }
+    }
   } //app
 } //body
