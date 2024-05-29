@@ -1,14 +1,15 @@
-import React from "react";
+import React from 'react';
 
 const ColorPalette = () => {
-  const colors = ['Black', 'Blue', 'Green', 'Yellow', 'White'] 
-  return(
+  const placeholderColors = ['Black', 'Blue', 'Green', 'Yellow', 'White'];
+  let key = 0;
+  return (
     <div id='colorPalette'>
-      {colors.map((el, index) => (
-        <div class='colorCircle'>{colors[index]}</div>
+      {placeholderColors.map((el, index) => (
+        <div className='colorCircle' key={key++}>{placeholderColors[index]}</div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default ColorPalette;

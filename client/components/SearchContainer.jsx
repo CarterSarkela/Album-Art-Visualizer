@@ -3,6 +3,7 @@ import SearchBar from './SearchBar.jsx';
 import AlbumArtContainer from './AlbumArtContainer.jsx';
 import '../style.scss';
 import ColorThief from 'colorthief/dist/color-thief.mjs';
+import ColorPalette from './ColorPalette.jsx';
 
 const SearchContainer = () => {
   const [imageLink, setImage] = useState(
@@ -14,12 +15,11 @@ const SearchContainer = () => {
     const img = document.createElement('img');
     img.crossOrigin = 'Anonymous';
     img.src = url;
-    let colors;
     img.onload = async () => {
       try {
         //get colors array
-        colors = await colorThief.getPalette(img, 5);
-        console.log('colors: ', colors)
+        const colors = await colorThief.getPalette(img, 5);
+        // console.log('colors: ', colors);
         //set elements selected via DOM manipulation and update the styles property
         document.body.style.setProperty(
           'background-color',
@@ -80,7 +80,7 @@ const SearchContainer = () => {
         <SearchBar changeImg={changeImg} />
       </div>
       <AlbumArtContainer imageLink={imageLink} />
-      <ColorPalette colors={colors}/>
+      <ColorPalette />
     </div>
   );
 };
