@@ -3,12 +3,12 @@ import SearchBar from './SearchBar.jsx';
 import AlbumArtContainer from './AlbumArtContainer.jsx';
 import '../style.scss';
 import ColorThief from 'colorthief/dist/color-thief.mjs';
+import ColorPalette from './ColorPalette.jsx';
 
 const SearchContainer = () => {
   const [imageLink, setImage] = useState(
     'https://upload.wikimedia.org/wikipedia/en/2/2a/2014ForestHillsDrive.jpg'
   );
-
   const changeImg = (url) => {
     setImage(url);
     const colorThief = new ColorThief();
@@ -80,6 +80,7 @@ const SearchContainer = () => {
         <SearchBar changeImg={changeImg} />
       </div>
       <AlbumArtContainer imageLink={imageLink} />
+      {/* <ColorPalette/> */}
     </div>
   );
 };

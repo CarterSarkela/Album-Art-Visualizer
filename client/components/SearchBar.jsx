@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 const albumArt = require('album-art');
 
 const SearchBar = ({ changeImg, image }) => {
   const [album, setAlbum] = useState('');
-
-
 
   const handleSubmit = async (e) => {
     const splitQuery = album.split("/")
