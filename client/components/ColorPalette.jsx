@@ -5,7 +5,7 @@ const ColorPalette = () => {
   return(
     <div id='colorPalette'>
       {colors.map((el, index) => (
-        <div class = 'colorCircle'>{el + index}</div>
+        <div class='colorCircle'>{colors[index]}</div>
       ))}
     </div>
   )

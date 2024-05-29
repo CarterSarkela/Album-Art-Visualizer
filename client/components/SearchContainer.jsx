@@ -14,11 +14,12 @@ const SearchContainer = () => {
     const img = document.createElement('img');
     img.crossOrigin = 'Anonymous';
     img.src = url;
+    let colors;
     img.onload = async () => {
       try {
         //get colors array
-        const colors = await colorThief.getPalette(img, 5);
-
+        colors = await colorThief.getPalette(img, 5);
+        console.log('colors: ', colors)
         //set elements selected via DOM manipulation and update the styles property
         document.body.style.setProperty(
           'background-color',
@@ -79,7 +80,7 @@ const SearchContainer = () => {
         <SearchBar changeImg={changeImg} />
       </div>
       <AlbumArtContainer imageLink={imageLink} />
-      {/* <ColorPalette/> */}
+      <ColorPalette colors={colors}/>
     </div>
   );
 };

@@ -56,26 +56,12 @@ body {
       align-items: center;
       width: 50vw;
       height: 30vw;
-      #leftDiv {
-        background-color: $color2;
-        min-width: 10vw;
-        min-height: 10vw;
-        border-radius: 50%;
-        margin-right: 5vw;
-      }
       #albumImg {
         :hover {
           transform: scale(1.1);
         }
         max-width: 30vw;
         max-height: 30vw;
-      }
-      #rightDiv {
-        background-color: $color3;
-        min-width: 10vw;
-        min-height: 10vw;
-        border-radius: 50%;
-        margin-left: 5vw;
       }
     }
     #createdBy {
@@ -87,16 +73,14 @@ body {
     }
     #colorPalette{
       margin-top: 2vh;
-      border: 5px solid black;
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
       .colorCircle{
-        background-color: $color3;
-        min-width: 10vw;
-        min-height: 10vw;
+        background-color: white;
+        width: 10vw;
+        height: 10vw;
         border-radius: 50%;
-        margin-left: 5vw;
       }
     }
   } //app
